@@ -1,0 +1,20 @@
+
+PROCEDURE insert(var T:array-of integer, var indice:entier,var i:entier)
+VAR
+    j:entier
+    aux:entier
+BEGIN
+    aux=T[i];
+    for j from i-1 to indice step -1 do
+    T[j+1]=T[j]
+END
+
+
+ALGORITHM 
+VAR
+    n:entier;
+BEGIN
+    write("entrer la valeur d un element");
+    read(n);
+    insert(n);
+END
