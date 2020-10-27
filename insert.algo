@@ -1,20 +1,14 @@
-
-PROCEDURE insert(var T:array-of integer, var indice:entier,var i:entier)
+PROCEDURE insertion(VAR T : ARRAY_OF INTEGER)
 VAR
-    j:entier
-    aux:entier
+    i,j,current : INTEGER;
 BEGIN
-    aux=T[i];
-    for j from i-1 to indice step -1 do
-    T[j+1]=T[j]
-END
-
-
-ALGORITHM 
-VAR
-    n:entier;
-BEGIN
-    write("entrer la valeur d un element");
-    read(n);
-    insert(n);
+    FOR i FROM 1 TO arr.length-1 DO
+        current := T [i];
+        j := i-1;
+        WHILE (j >= 0 AND arr[j] > current) DO
+            T[j+1] := T[j];
+            j := j-1;
+        END_WHILE
+    T[j+1] = current;
+    END_FOR
 END
